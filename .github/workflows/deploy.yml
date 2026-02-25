@@ -56,7 +56,7 @@ jobs:
             # docker-compose.yml에서 사용할 DOCKER_USERNAME 환경변수 설정
             export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
             
-            docker-compose pull
+            docker compose pull
             
             # 브랜치(태그)에 따라 해당 서비스만 띄우기
             if [ "${{ env.DOCKER_TAG }}" == "prod" ]; then
