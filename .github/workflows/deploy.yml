@@ -60,9 +60,9 @@ jobs:
             
             # 브랜치(태그)에 따라 해당 서비스만 띄우기
             if [ "${{ env.DOCKER_TAG }}" == "prod" ]; then
-              docker-compose up -d perseus-prod
+              docker compose up -d perseus-prod
             else
-              docker-compose up -d perseus-dev
+              docker compose up -d perseus-dev
             fi
             
             docker image prune -f
