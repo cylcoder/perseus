@@ -6,7 +6,8 @@ spring:
     default: dev
 
   mail:
-    host: smtp.gmail.com
+#    host: smtp.gmail.com
+    host: email-smtp.ap-northeast-2.amazonaws.com
     port: 587
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}
@@ -16,3 +17,4 @@ spring:
           auth: true
           starttls:
             enable: true
+            required: true
