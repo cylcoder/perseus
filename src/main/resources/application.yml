@@ -5,6 +5,9 @@ spring:
   profiles:
     default: dev
 
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
   mail:
     host: smtp.gmail.com
     port: 587
@@ -16,3 +19,6 @@ spring:
           auth: true
           starttls:
             enable: true
+
+server:
+  shutdown: graceful
