@@ -17,7 +17,8 @@ public class TestController {
 
   @GetMapping("/api/env")
   public String checkEnv() {
-    return "Running on: " + profile.toUpperCase() + " (Port: " + port + ")";
+    String containerId = System.getenv("HOSTNAME");
+    return "Running on: " + profile.toUpperCase() + " (container ID: " + containerId + ")";
   }
 
   @GetMapping("/api/port")
