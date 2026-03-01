@@ -5,6 +5,9 @@ spring:
   profiles:
     default: dev
 
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
   mail:
 #    host: smtp.gmail.com
     host: email-smtp.ap-northeast-2.amazonaws.com
@@ -18,3 +21,6 @@ spring:
           starttls:
             enable: true
             required: true
+
+server:
+  shutdown: graceful

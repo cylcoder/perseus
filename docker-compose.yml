@@ -1,18 +1,27 @@
-version: '3.8'
-
 services:
-  perseus-prod:
-    container_name: perseus-prod
+  prod-blue:
+    container_name: prod-blue
     image: ${DOCKER_USERNAME}/perseus:prod
+    stop_grace_period: 40s
     ports:
       - "8080:8080"
     env_file: .env.prod
     restart: always
 
-  perseus-dev:
-    container_name: perseus-dev
-    image: ${DOCKER_USERNAME}/perseus:dev
+  prod-green:
+    container_name: prod-green
+    image: ${DOCKER_USERNAME}/perseus:prod
+    stop_grace_period: 40s
     ports:
       - "8081:8080"
+    env_file: .env.prod
+    restart: always
+
+  dev:
+    container_name: dev
+    image: ${DOCKER_USERNAME}/perseus:dev
+    stop_grace_period: 40s
+    ports:
+      - "8082:8080"
     env_file: .env.dev
     restart: always
